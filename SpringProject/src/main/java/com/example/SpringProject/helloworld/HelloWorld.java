@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 public class HelloWorld {
    @javax.persistence.Id
    @Id
-   @GeneratedValue
+   @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String languageName;
     private String message;
