@@ -1,16 +1,26 @@
 package com.example.SpringProject.helloworld;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping(path="/hello-rest")
+
 public class HelloController {
 
-    @GetMapping
+    @GetMapping("hello-rest")
     public String hello(){
-        return "Hello World";
+        HelloWorld helloWorld = new HelloWorld("srpski","Zdravo svete");
+        return "Zdravo svete";
     }
+    @RequestMapping("hello")
+    public ModelAndView index(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
+    }
+
+
+
 }
