@@ -3,6 +3,8 @@ package com.example.SpringProject.helloworld;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
+
 @org.springframework.stereotype.Controller
 public class Controller {
 
@@ -12,4 +14,11 @@ public class Controller {
         modelAndView.setViewName("index.html");
         return modelAndView;
     }
+    @RequestMapping("secure/admin/hello")
+    public ModelAndView add(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addLanguage.html");
+        return modelAndView;
+    }
+
 }
